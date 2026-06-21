@@ -6,11 +6,11 @@
     "course": "자동제어 - 2026 봄",
     "ai_usage": "none"
   },
-  "timestamp": "2026-06-21T22:13:43",
+  "timestamp": "2026-06-22T02:09:47",
   "quantitative": {
-    "score": 5,
+    "score": 8.2651526713404984,
     "max": 70,
-    "pct": 7.1428571428571432
+    "pct": 11.807360959057855
   },
   "deductions": {
     "amount": 0,
@@ -85,7 +85,7 @@
     {
       "sid": "A7",
       "kpi": "sideSlipMax",
-      "value": 30.477565717542,
+      "value": 51.984965725864328,
       "target": 5,
       "score": 0,
       "max": 8
@@ -93,7 +93,7 @@
     {
       "sid": "A7",
       "kpi": "LTR_max",
-      "value": 0.68077726862634913,
+      "value": 0.86389492960782943,
       "target": 0.7,
       "score": 0,
       "max": 7
@@ -101,7 +101,7 @@
     {
       "sid": "B1",
       "kpi": "stoppingDistance",
-      "value": 72.2992319914078,
+      "value": 78.317782946874388,
       "target": 40,
       "score": 0,
       "max": 5
@@ -109,7 +109,7 @@
     {
       "sid": "B1",
       "kpi": "absSlipRMS",
-      "value": 0.72950347098814272,
+      "value": 0.50596224791105437,
       "target": 0.1,
       "score": 0,
       "max": 5
@@ -117,9 +117,9 @@
     {
       "sid": "D1",
       "kpi": "sideSlipMax",
-      "value": 4.9057476136928635,
+      "value": 4.7348473286595025,
       "target": 4,
-      "score": 0,
+      "score": 3.2651526713404975,
       "max": 4
     },
     {
@@ -139,8 +139,8 @@
       "max": 2
     }
   ],
-  "final_auto": 5,
-  "ctrl_signature": "0afb1b0e948dacc41174c316b8a0661e44443e47ae8c5530d2cedf235fd6893e",
+  "final_auto": 8.2651526713404984,
+  "ctrl_signature": "c0aec9cff14d92996c2e535e46791e8dd59f466c93834f63d97a97bf45f5c35e",
   "matlab_version": "25.2 (R2025b)",
   "solver_used": "ode45"
 }

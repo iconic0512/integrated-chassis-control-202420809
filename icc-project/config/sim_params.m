@@ -49,9 +49,12 @@ CTRL.LAT.Kp     = 1.0;     % 비례 게인
 CTRL.LAT.Ki     = 0.1;     % 적분 게인
 CTRL.LAT.Kd     = 0.05;    % 미분 게인
 CTRL.LAT.intMax = 5.0;     % 적분 안티와인드업 한계 [rad]
+CTRL.LON.intMax = 2000;    % 적분 안티와인드업 한계 [Nm]
+CTRL.LON.absKp  = 5;       % ABS 슬립 PI 비례게인     ← 5로 변경
+CTRL.LON.absKi  = 10;      % ABS 슬립 PI 적분게인
 
 %% 제어기 파라미터 — 종방향 (Longitudinal)
-CTRL.LON.Kp     = 0.5;     % 비례 게인
+CTRL.LON.Kp     = 0.5;     % 비례 게인                ← 0.5로 복구
 CTRL.LON.Ki     = 0.05;    % 적분 게인
 CTRL.LON.intMax = 2000;    % 적분 안티와인드업 한계 [Nm]
 
@@ -73,6 +76,7 @@ LIM.MAX_BRAKE_TRQ   = 3000;   % [Nm] 최대 브레이크 토크 (per wheel)
 LIM.MAX_AX          = 10.0;   % [m/s^2] 최대 종가속도
 LIM.MAX_AY          = 10.0;   % [m/s^2] 최대 횡가속도
 LIM.MAX_JERK        = 50.0;   % [m/s^3] 최대 저크
+LIM.MAX_DFX         = VEH.mass * LIM.MAX_JERK;   % [N/s] 힘 변화율 한계
 LIM.MAX_YAW_RATE    = deg2rad(60);   % [rad/s] 최대 요 레이트
 LIM.MAX_SLIP_ANGLE  = deg2rad(12);   % [rad] 최대 슬립 앵글
 
