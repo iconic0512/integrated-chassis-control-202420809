@@ -46,7 +46,7 @@ TIRE.mu_peak = 1.0;  % 최대 마찰 계수
 
 %% 제어기 파라미터 — 횡방향 (Lateral)
 CTRL.LAT.Kp     = 1.0;     % 비례 게인
-CTRL.LAT.Ki     = 0.1;     % 적분 게인
+CTRL.LAT.Ki     = 0.01;     % 적분 게인
 CTRL.LAT.Kd     = 0.05;    % 미분 게인
 CTRL.LAT.intMax = 5.0;     % 적분 안티와인드업 한계 [rad]
 CTRL.LAT.betaTh = deg2rad(3);   % [rad] slip angle 임계 (ASSIGNMENT 기준 3도)
