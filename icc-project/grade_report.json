@@ -6,11 +6,11 @@
     "course": "자동제어 - 2026 봄",
     "ai_usage": "none"
   },
-  "timestamp": "2026-06-22T17:34:55",
+  "timestamp": "2026-06-22T19:32:49",
   "quantitative": {
-    "score": 56.299097780000231,
+    "score": 58.177607054347042,
     "max": 70,
-    "pct": 80.427282542857483
+    "pct": 83.110867220495777
   },
   "deductions": {
     "amount": 0,
@@ -45,7 +45,7 @@
     {
       "sid": "A1",
       "kpi": "sideSlipMax",
-      "value": 2.6938937070705307,
+      "value": 2.0022664991408292,
       "target": 3,
       "score": 6,
       "max": 6
@@ -53,7 +53,7 @@
     {
       "sid": "A1",
       "kpi": "LTR_max",
-      "value": 0.46416927331921626,
+      "value": 0.40925301082112081,
       "target": 0.6,
       "score": 5,
       "max": 5
@@ -61,7 +61,7 @@
     {
       "sid": "A1",
       "kpi": "lateralDevMax",
-      "value": 2.2964235516264853,
+      "value": 2.3647905488777461,
       "target": 0.7,
       "score": 0,
       "max": 4
@@ -85,7 +85,7 @@
     {
       "sid": "A7",
       "kpi": "sideSlipMax",
-      "value": 2.6935794562056512,
+      "value": 2.67516948734882,
       "target": 5,
       "score": 8,
       "max": 8
@@ -101,7 +101,7 @@
     {
       "sid": "B1",
       "kpi": "stoppingDistance",
-      "value": 72.578084674990535,
+      "value": 72.402072618346068,
       "target": 40,
       "score": 0,
       "max": 5
@@ -109,15 +109,15 @@
     {
       "sid": "B1",
       "kpi": "absSlipRMS",
-      "value": 0.15642706659999284,
+      "value": 0.10007178836958852,
       "target": 0.1,
-      "score": 3.1190977800002391,
+      "score": 4.99760705434705,
       "max": 5
     },
     {
       "sid": "D1",
       "kpi": "sideSlipMax",
-      "value": 3.6078202434164761,
+      "value": 2.0022664991408292,
       "target": 4,
       "score": 4,
       "max": 4
@@ -125,7 +125,7 @@
     {
       "sid": "D1",
       "kpi": "LTR_max",
-      "value": 0.46413279303871724,
+      "value": 0.40925301082112081,
       "target": 0.6,
       "score": 2,
       "max": 2
@@ -133,13 +133,13 @@
     {
       "sid": "D1",
       "kpi": "lateralDevMax",
-      "value": 2.2964235516264853,
+      "value": 2.3647905488777461,
       "target": 1,
       "score": 0,
       "max": 2
     }
   ],
-  "final_auto": 56.299097780000231,
+  "final_auto": 58.177607054347042,
   "ctrl_signature": "a7a7899122018dbec421599bb88b6e77ddabaf71b0b7f487ce6abf50c4767441",
   "matlab_version": "25.2 (R2025b)",
   "solver_used": "ode45"
