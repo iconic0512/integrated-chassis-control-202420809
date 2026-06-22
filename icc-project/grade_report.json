@@ -6,11 +6,11 @@
     "course": "자동제어 - 2026 봄",
     "ai_usage": "none"
   },
-  "timestamp": "2026-06-22T13:47:17",
+  "timestamp": "2026-06-22T15:24:43",
   "quantitative": {
-    "score": 53.47274067947599,
+    "score": 54.690020042182745,
     "max": 70,
-    "pct": 76.389629542108565
+    "pct": 78.128600060261064
   },
   "deductions": {
     "amount": 0,
@@ -101,7 +101,7 @@
     {
       "sid": "B1",
       "kpi": "stoppingDistance",
-      "value": 74.0743948663055,
+      "value": 73.197840523836035,
       "target": 40,
       "score": 0,
       "max": 5
@@ -109,9 +109,9 @@
     {
       "sid": "B1",
       "kpi": "absSlipRMS",
-      "value": 0.24076777961572032,
+      "value": 0.20424939873451786,
       "target": 0.1,
-      "score": 0.30774067947598926,
+      "score": 1.525020042182738,
       "max": 5
     },
     {
@@ -139,7 +139,7 @@
       "max": 2
     }
   ],
-  "final_auto": 53.47274067947599,
+  "final_auto": 54.690020042182745,
   "ctrl_signature": "5ee63947d3ac07c480cf3830be9f7718e48231b650a05410c6431e10d0affe2e",
   "matlab_version": "25.2 (R2025b)",
   "solver_used": "ode45"
