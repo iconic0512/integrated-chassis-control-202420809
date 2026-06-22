@@ -6,7 +6,7 @@
     "course": "자동제어 - 2026 봄",
     "ai_usage": "none"
   },
-  "timestamp": "2026-06-22T17:05:05",
+  "timestamp": "2026-06-22T17:34:55",
   "quantitative": {
     "score": 56.299097780000231,
     "max": 70,
@@ -140,7 +140,7 @@
     }
   ],
   "final_auto": 56.299097780000231,
-  "ctrl_signature": "829fba93489757aabad7dec4e4236ae46336aa9da6a70fbc0a9af7f68e724c0b",
+  "ctrl_signature": "a7a7899122018dbec421599bb88b6e77ddabaf71b0b7f487ce6abf50c4767441",
   "matlab_version": "25.2 (R2025b)",
   "solver_used": "ode45"
 }
