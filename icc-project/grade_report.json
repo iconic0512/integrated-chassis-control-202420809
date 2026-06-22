@@ -4,9 +4,9 @@
     "name": "최연우",
     "team_members": [],
     "course": "자동제어 - 2026 봄",
-    "ai_usage": "none"
+    "ai_usage": "Claude used for environment setup debugging (Git/MATLAB integration), ctrl_*.m initial design and code review, multi-stage gain tuning support across all four controllers (lateral PID, ABS gate redesign, absKp/kappaTarget search, AFS output cap), and report drafting. All design decisions, parameter selection, and final verification via grade.m were performed by the student."
   },
-  "timestamp": "2026-06-22T23:19:22",
+  "timestamp": "2026-06-23T00:43:17",
   "quantitative": {
     "score": 59,
     "max": 70,

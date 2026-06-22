@@ -51,6 +51,7 @@ CTRL.LAT.Kd     = 0.05;    % 미분 게인
 CTRL.LAT.intMax = 5.0;     % 적분 안티와인드업 한계 [rad]
 CTRL.LAT.betaTh = deg2rad(3);   % [rad] slip angle 임계 (ASSIGNMENT 기준 3도)
 CTRL.LAT.Kbeta  = 1000;         % [Nm/rad] ESC yaw moment 게인 (1차 추정값, 튜닝 대상)
+CTRL.LAT.maxSteerRate = 1.0;   % [rad/s] AFS 조향 변화율 제한
 CTRL.LAT.vRef   = 20;           % [m/s] speed scheduling 기준 속도
 CTRL.LAT.wheelbase = VEH.lf + VEH.lr;   % [m] feedforward용 축거    ← 새로 추가
 CTRL.LAT.muEst = 1.0;   % yaw rate ref saturation용 마찰계수 추정치
