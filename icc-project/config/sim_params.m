@@ -50,13 +50,13 @@ CTRL.LAT.Ki     = 0.01;     % 적분 게인
 CTRL.LAT.Kd     = 0.05;    % 미분 게인
 CTRL.LAT.intMax = 5.0;     % 적분 안티와인드업 한계 [rad]
 CTRL.LAT.betaTh = deg2rad(3);   % [rad] slip angle 임계 (ASSIGNMENT 기준 3도)
-CTRL.LAT.Kbeta  = 5000;         % [Nm/rad] ESC yaw moment 게인 (1차 추정값, 튜닝 대상)
+CTRL.LAT.Kbeta  = 1000;         % [Nm/rad] ESC yaw moment 게인 (1차 추정값, 튜닝 대상)
 CTRL.LAT.vRef   = 20;           % [m/s] speed scheduling 기준 속도
 CTRL.LAT.wheelbase = VEH.lf + VEH.lr;   % [m] feedforward용 축거    ← 새로 추가
 CTRL.LAT.muEst = 1.0;   % yaw rate ref saturation용 마찰계수 추정치
 CTRL.LAT.deadband = deg2rad(2);   % [rad/s] 미세 yaw rate 오차는 AFS 미개입
 CTRL.LON.intMax = 2000;    % 적분 안티와인드업 한계 [Nm]
-CTRL.LON.absKp  = 47;       % ABS 슬립 PI 비례게인
+CTRL.LON.absKp  = 25;       % ABS 슬립 PI 비례게인
 CTRL.LON.absKi  = 25;      % ABS 슬립 PI 적분게인
 
 %% 제어기 파라미터 — 종방향 (Longitudinal)

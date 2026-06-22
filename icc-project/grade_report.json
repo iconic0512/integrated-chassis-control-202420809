@@ -6,11 +6,11 @@
     "course": "자동제어 - 2026 봄",
     "ai_usage": "none"
   },
-  "timestamp": "2026-06-22T19:59:38",
+  "timestamp": "2026-06-22T21:16:46",
   "quantitative": {
-    "score": 58.997607054347057,
+    "score": 59,
     "max": 70,
-    "pct": 84.282295791924369
+    "pct": 84.285714285714292
   },
   "deductions": {
     "amount": 0,
@@ -45,7 +45,7 @@
     {
       "sid": "A1",
       "kpi": "sideSlipMax",
-      "value": 1.9727471471884337,
+      "value": 2.1925700845073268,
       "target": 3,
       "score": 6,
       "max": 6
@@ -53,7 +53,7 @@
     {
       "sid": "A1",
       "kpi": "LTR_max",
-      "value": 0.40925393007313604,
+      "value": 0.53405789032373463,
       "target": 0.6,
       "score": 5,
       "max": 5
@@ -61,7 +61,7 @@
     {
       "sid": "A1",
       "kpi": "lateralDevMax",
-      "value": 2.377107299116513,
+      "value": 2.285111260973788,
       "target": 0.7,
       "score": 0,
       "max": 4
@@ -85,7 +85,7 @@
     {
       "sid": "A7",
       "kpi": "sideSlipMax",
-      "value": 2.6846923147559596,
+      "value": 2.3534752335207614,
       "target": 5,
       "score": 8,
       "max": 8
@@ -101,7 +101,7 @@
     {
       "sid": "B1",
       "kpi": "stoppingDistance",
-      "value": 72.402072618346068,
+      "value": 68.918194019885675,
       "target": 40,
       "score": 0,
       "max": 5
@@ -109,15 +109,15 @@
     {
       "sid": "B1",
       "kpi": "absSlipRMS",
-      "value": 0.10007178836958852,
+      "value": 0.090163993642239662,
       "target": 0.1,
-      "score": 4.99760705434705,
+      "score": 5,
       "max": 5
     },
     {
       "sid": "D1",
       "kpi": "sideSlipMax",
-      "value": 1.9727471471884337,
+      "value": 2.8209343810795238,
       "target": 4,
       "score": 4,
       "max": 4
@@ -125,7 +125,7 @@
     {
       "sid": "D1",
       "kpi": "LTR_max",
-      "value": 0.40925393007313604,
+      "value": 0.53401161590229851,
       "target": 0.6,
       "score": 2,
       "max": 2
@@ -133,14 +133,14 @@
     {
       "sid": "D1",
       "kpi": "lateralDevMax",
-      "value": 2.377107299116513,
+      "value": 2.285111260973788,
       "target": 1,
       "score": 0,
       "max": 2
     }
   ],
-  "final_auto": 58.997607054347057,
-  "ctrl_signature": "829fba93489757aabad7dec4e4236ae46336aa9da6a70fbc0a9af7f68e724c0b",
+  "final_auto": 59,
+  "ctrl_signature": "c7a88b60a3869be2c47c4e903271388d6e2d1a7966410cdd4c6957206434e8d4",
   "matlab_version": "25.2 (R2025b)",
   "solver_used": "ode45"
 }

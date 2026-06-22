@@ -13,7 +13,7 @@ function [forceCmd, ctrlState] = ctrl_longitudinal(vxRef, vx, ax, ctrlState, CTR
     Fx_track = CTRL.LON.Kp*err + CTRL.LON.Ki*ctrlState.intError;
 
     axBrakeThreshold = -1.8;   % [m/s^2] 의도적 강한 브레이크 판단 기준 (약 0.2g)
-    kappaTarget = 0.12;
+    kappaTarget = 0.06;
     Fx_abs = 0;
 
     if ax < axBrakeThreshold
