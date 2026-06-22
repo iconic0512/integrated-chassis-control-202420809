@@ -1,41 +1,48 @@
 function [forceCmd, ctrlState] = ctrl_longitudinal(vxRef, vx, ax, ctrlState, CTRL, LIM, dt)
-%CTRL_LONGITUDINAL 속도추종 PI + 히스테리시스 ABS + release cap
+%CTRL_LONGITUDINAL 속도추종 PI + 게이트 있는 κ=0.12 직접추종 ABS
 
-    if ~isfield(ctrlState,'intError');  ctrlState.intError  = 0; end
-    if ~isfield(ctrlState,'prevForce'); ctrlState.prevForce = 0; end
-    if ~isfield(ctrlState,'wheelSlip'); ctrlState.wheelSlip = zeros(4,1); end
-    if ~isfield(ctrlState,'absActive'); ctrlState.absActive = false; end
+    if ~isfield(ctrlState,'intError');   ctrlState.intError   = 0; end
+    if ~isfield(ctrlState,'prevForce');  ctrlState.prevForce  = 0; end
+    if ~isfield(ctrlState,'wheelSlip');  ctrlState.wheelSlip  = zeros(4,1); end
+    if ~isfield(ctrlState,'absActive');  ctrlState.absActive  = false; end
+    if ~isfield(ctrlState,'slipIntErr'); ctrlState.slipIntErr = 0; end
 
-    %% (1) 속도추종 PI
     err = vxRef - vx;
     ctrlState.intError = ctrlState.intError + err*dt;
     ctrlState.intError = max(min(ctrlState.intError, CTRL.LON.intMax), -CTRL.LON.intMax);
     Fx_track = CTRL.LON.Kp*err + CTRL.LON.Ki*ctrlState.intError;
 
-    %% (2) ABS — 히스테리시스 + release cap
     kappaEngage  = 0.15;
-    kappaRelease = 0.08;
+    kappaRelease = 0.05;
+    kappaTarget  = 0.12;
     Fx_abs = 0;
+
     if ax < 0
         kappaMeas = mean(abs(ctrlState.wheelSlip));
 
         if ~ctrlState.absActive && kappaMeas > kappaEngage
             ctrlState.absActive = true;
+            ctrlState.slipIntErr = 0;
         elseif ctrlState.absActive && kappaMeas < kappaRelease
             ctrlState.absActive = false;
         end
 
         if ctrlState.absActive
-            Fx_abs = CTRL.LON.absKp * (kappaMeas - kappaRelease) * LIM.MAX_BRAKE_TRQ;
+            kappaErr = kappaMeas - kappaTarget;
+            ctrlState.slipIntErr = ctrlState.slipIntErr + kappaErr*dt;
+            ctrlState.slipIntErr = max(min(ctrlState.slipIntErr, 1), -1);
+            Fx_abs = (CTRL.LON.absKp*kappaErr + CTRL.LON.absKi*ctrlState.slipIntErr) * LIM.MAX_BRAKE_TRQ;
         end
+    else
+        ctrlState.absActive = false;
     end
 
-    Fx_des = Fx_abs;
-    if ax >= 0
+    if ax < 0
+        Fx_des = Fx_abs;
+    else
         Fx_des = Fx_track;
     end
 
-    %% (3) jerk limit
     maxDeltaFx = LIM.MAX_DFX * dt;
     deltaFx = max(min(Fx_des - ctrlState.prevForce, maxDeltaFx), -maxDeltaFx);
     Fx_total = ctrlState.prevForce + deltaFx;
