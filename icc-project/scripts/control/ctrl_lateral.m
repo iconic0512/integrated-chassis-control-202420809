@@ -1,5 +1,5 @@
 function [deltaAdd, ctrlState] = ctrl_lateral(yawRateRef, yawRate, slipAngle, vx, ctrlState, CTRL, LIM, dt)
-%CTRL_LATERAL AFS (PID + filtered derivative) + ESC
+%CTRL_LATERAL AFS (필터링된 PID) + ESC (slip angle 리미터)
 
     if ~isfield(ctrlState,'intError');  ctrlState.intError  = 0; end
     if ~isfield(ctrlState,'prevError'); ctrlState.prevError = 0; end
@@ -9,7 +9,6 @@ function [deltaAdd, ctrlState] = ctrl_lateral(yawRateRef, yawRate, slipAngle, vx
     ctrlState.intError = ctrlState.intError + err*dt;
     ctrlState.intError = max(min(ctrlState.intError, CTRL.LAT.intMax), -CTRL.LAT.intMax);
 
-    %% 미분항에 저역통과 필터 적용 (노이즈/발산 억제)
     rawDeriv = (err - ctrlState.prevError)/dt;
     ctrlState.prevError = err;
 
