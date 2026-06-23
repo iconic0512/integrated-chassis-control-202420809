@@ -1,25 +1,13 @@
 function info = student_info()
-%STUDENT_INFO 학생 정보 — 채점 시 매칭에 사용. **반드시 수정해서 제출.**
-%
-%   info struct fields:
-%       .student_id   - 학번 (string, 예: '20210123')
-%       .name         - 이름 (string)
-%       .team_members - 팀 구성원 (cell array of struct, 개인 제출 시 빈 cell)
-%       .course       - 과목 코드/이름
-%       .ai_usage     - AI 도구 (ChatGPT, Claude 등) 사용 여부 + 범위 (string)
-%
-%   본 파일을 수정하지 않으면 -5점 감점 + 채점 시트 매칭 불가.
-
     info.student_id   = '202420809';
     info.name         = '최연우';
     info.team_members = {};   % 2인 팀이면 {struct('id','...','name','...')} 추가
-
     info.course = '자동제어 - 2026 봄';
-
-    % AI 도구 사용 사실 (정직 신고) — 사용 안 했으면 'none'
-    %   예: 'ChatGPT used for PID gain tuning suggestion'
-    %       'Claude used to debug LQR design'
-    info.ai_usage = 'none';
+    info.ai_usage = ['환경 세팅 디버깅: Git/MATLAB 연동 트러블슈팅(예: ctrl_signature mismatch 오류를 git의 core.autocrlf 설정 문제로 진단). ' ...
+        'ctrl_*.m 4개 파일의 1차 설계안 작성 및 코드 리뷰: PID+필터 구조(ctrl_lateral), 게이트+PI 구조(ctrl_longitudinal), on-off Skyhook(ctrl_vertical), WLS 분배(ctrl_coordinator)의 초안 제안. ' ...
+        '다단계 게인 튜닝 지원: ctrl_lateral의 Kd 발산 원인을 미분항 노이즈로 진단하여 1차 저역통과 필터 도입을 제안 → 본인이 직접 Kd를 0.05→0.01로 정밀조정해 A3 완전 만점 검증. ctrl_longitudinal의 ABS 게이트를 슬립비 기반에서 종가속도 기반으로 전환하는 아이디어 제안, 이후 κ_target 재탐색(0.12→0.06) 방향 제안 → 본인이 grade.m 반복 실행으로 직접 최적값 확인. ' ...
+        'grade.m의 local_score 함수 직접 분석을 통한 채점 메커니즘 규명(baseline 개선이 target 값과 무관한 1차 필요조건이라는 사실 확인). ' ...
+        '모든 설계 결정, 파라미터 최종 선택, 안전성 검증(매 변경 후 grade.m 실행 및 결과 판단)은 본인이 직접 수행함.'];
 
     %% 검증 (수정 금지)
     if contains(info.student_id, 'TODO_FILL')
